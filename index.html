@@ -74,12 +74,59 @@
 </head>
 <body>
   <header>
-    <h1><img src="logo_3364.jpg" alt="Logo">Jacobo.store</h1>
+    <header>
+  <div class="header-container">
+    <img src="imagenes/logo.665.jpg" alt="Logo" class="logo">
+    <h1>Jacobo.store</h1>
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#productos">Productos</a>
       <a href="#sobre">Sobre Nosotros</a>
     </nav>
+  </div>
+</header>
+
+<style>
+/* HEADER REARMADO */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid #00bfff;
+  z-index: 1000;
+}
+
+.logo {
+ height: 80px; /* tamaño grande del logo */
+ width: auto;
+ margin-right: 15px;
+}
+
+.header-container h1 {
+  color: #00bfff;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+.header-container nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.header-container nav a:hover {
+  color: #00ffff;
+}
+</style>
   </header>
 
   <section id="inicio">
@@ -90,24 +137,24 @@
   <section id="productos">
     <h2>Clothes</h2>
     <div class="grid-productos">
-      <div class="producto" data-nombre="NIKE TECH 🩶" data-precio="$80.000 CLP" data-descripcion="Conjunto NIKE TECH DARK GREY">
-        <img src="tech_3363.png" alt="CONJUNTO">
+      <div class="producto" data-nombre="NIKE TECH 🩶" data-precio="$80.000 CLP" data-descripcion="Conjunto Nike Tech Dark Grey">
+        <img src="imagenes/tech_3363.png" alt="CONJUNTO">
         <h3>CONJUNTO NIKE TECH DARK GREY</h3>
         <p>$80.000 CLP</p>
       </div>
-      <div class="producto" data-nombre="Proximamente.." data-precio="$25.000 CLP" data-descripcion="Polerón premium próximamente..">
-        <img src="imagenes/poleron.jpg" alt="Proximamente">
-        <h3>Proximamente..</h3>
+      <div class="producto" data-nombre="Polerón Jacobo.store" data-precio="$25.000 CLP" data-descripcion="Polerón premium con bordado Jacobo.store. Ideal para cualquier temporada.">
+        <img src="imagenes/poleron.jpg" alt="Polerón">
+        <h3>Polerón Jacobo.store</h3>
         <p>$25.000 CLP</p>
       </div>
-      <div class="producto" data-nombre="Proximamente.." data-precio="$10.000 CLP" data-descripcion="Gorra próximamente..">
-        <img src="imagenes/gorra.jpg" alt="Proximamente">
-        <h3>Proximamente..</h3>
+      <div class="producto" data-nombre="Gorra Proximamente" data-precio="$10.000 CLP" data-descripcion="Descripcion">
+        <img src="imagenes/gorra.jpg" alt="Gorra">
+        <h3>Gorra Proximamente</h3>
         <p>$10.000 CLP</p>
       </div>
-      <div class="producto" data-nombre="Proximamente.." data-precio="$18.000 CLP" data-descripcion="Camiseta próximamente..">
-        <img src="imagenes/camiseta_negra.jpg" alt="Proximamente">
-        <h3>Proximamente..</h3>
+      <div class="producto" data-nombre="Camiseta Negra" data-precio="$18.000 CLP" data-descripcion="Descripcion">
+        <img src="imagenes/camiseta_negra.jpg" alt="Camiseta Negra">
+        <h3>Camiseta Negra</h3>
         <p>$18.000 CLP</p>
       </div>
     </div>
