@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jacobo.store</title>
+  <style>
+    /* ===== GENERAL ===== */
+    * { margin:0; padding:0; box-sizing:border-box; scroll-behavior: smooth; }
+    body { font-family:'Poppins', sans-serif; color:#fff; min-height:100vh; }
+
+    /* ===== FONDO ANIMADO ===== */
+    body {
+      background: linear-gradient(-45deg, #00bfff, #00ffff, #0080ff, #001f4d);
+      background-size: 400% 400%;
+      animation: gradientAnim 15s ease infinite;
+    }
+    @keyframes gradientAnim {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position:fixed; top:0; left:0; width:100%;
+      background: rgba(0,0,0,0.7);
+      padding:15px 40px;
+      display:flex; justify-content:space-between; align-items:center;
+      backdrop-filter: blur(8px); border-bottom: 2px solid #00bfff; z-index:1000;
+    }
+    header h1 { display:flex; align-items:center; color:#00bfff; font-size:1.8em; font-weight:700; }
+    header h1 img { height:40px; margin-right:10px; }
+    nav a { margin-left:25px; text-decoration:none; color:#fff; font-weight:500; transition:0.3s; }
+    nav a:hover { color:#00ffff; }
+
+    /* ===== SECCIONES ===== */
+    section { min-height:100vh; padding:100px 60px; display:flex; flex-direction:column; justify-content:center; opacity:0; transform:translateY(50px); transition:all 0.8s ease; }
+    section.visible { opacity:1; transform:translateY(0); }
+
+    #inicio { text-align:center; }
+    #inicio h2 { font-size:3em; color:#00ffff; margin-bottom:20px; text-shadow: 2px 2px 8px #000; }
+    #inicio p { font-size:1.2em; color:#ccc; }
+
+    #productos, #sobre { background: rgba(0,0,0,0.8); border-radius:20px; margin:20px auto; padding:60px; max-width:1200px; }
+    #productos h2, #sobre h2 { font-size:2.5em; color:#00ffff; margin-bottom:30px; text-align:center; }
+
+    .grid-productos { display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:25px; }
+    .producto {
+      background: #111; border-radius:12px; padding:15px; text-align:center; cursor:pointer; transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .producto:hover { transform:scale(1.05); box-shadow:0 0 20px #00ffff; }
+    .producto img { width:100%; border-radius:8px; transition: transform 0.3s; }
+    .producto:hover img { transform:scale(1.1); }
+    .producto h3 { margin:10px 0; color:#fff; }
+    .producto p { color:#aaa; }
+
+    #sobre p { color:#ccc; font-size:1.1em; line-height:1.6; text-align:center; }
+
+    footer { text-align:center; padding:20px; background:#000; border-top:2px solid #00bfff; color:#999; font-size:0.9em; }
+
+    /* ===== MODAL ===== */
+    .modal { position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); display:none; justify-content:center; align-items:center; z-index:2000; }
+    .modal-contenido { background:#111; padding:30px; border-radius:12px; text-align:center; max-width:400px; box-shadow:0 0 20px #00bfff; animation: aparecer 0.3s ease; }
+    .modal-contenido img { width:100%; border-radius:8px; margin-bottom:15px; }
+    .modal-contenido h3 { color:#00ffff; margin-bottom:10px; }
+    .modal-contenido p { color:#ccc; font-size:1em; margin-bottom:10px; }
+    .cerrar { background:#00bfff; border:none; color:#fff; padding:10px 18px; border-radius:5px; cursor:pointer; transition:0.3s; }
+    .cerrar:hover { background:#0080ff; }
+    #whatsapp-btn { display:inline-block; background:#25D366; color:#fff; padding:10px 18px; border-radius:6px; margin-top:10px; text-decoration:none; font-weight:bold; transition:0.3s; }
+    #whatsapp-btn:hover { background:#1ebe57; }
+    @keyframes aparecer { from{transform:scale(0.8); opacity:0;} to{transform:scale(1); opacity:1;} }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><img src="IMG_3364.jpg" alt="Logo">Jacobo.store</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#sobre">Sobre Nosotros</a>
+    </nav>
+  </header>
+
+  <section id="inicio">
+    <h2>Bienvenido a Jacobo.store</h2>
+    <p>TU TIENDA DE CONFIANZA 💙 ⚡</p>
+  </section>
+
+  <section id="productos">
+   <h2>Clothes</h2>
+
+
+
+   <div class="grid-productos">
+      <div class="producto" data-nombre="NIKE TECH 🩶" data-precio="$15.000 CLP" data-descripcion="Descripcion">
+        <img src="IMG_3363.png" alt="CONJUNTO">
+        <h3>CONJUNTO NIKE TECH DARK GREY</h3>
+        <p>$80.000 CLP</p>
+      </div>
+      <div class="producto" data-nombre="PROXIMAMENTE.." data-precio="$25.000 CLP" data-descripcion="Polerón premium con bordado Jacobo.store. Ideal para cualquier temporada.">
+        <img src="imagenes/poleron.jpg" alt="PROXIMAMENTE..">
+        <h3>PROXIMAMENTE..</h3>
+        <p>$25.000 CLP</p>
+      </div>
+      <div class="producto" data-nombre="PROXIMAMENTE.." data-precio="$10.000 CLP" data-descripcion="Descripcion">
+        <img src="imagenes/gorra.jpg" alt="PROXIMAMENTE..">
+        <h3>PROXIMAMENTE..</h3>
+        <p>$10.000 CLP</p>
+      </div>
+      <div class="producto" data-nombre="PROXIMAMENTE.." data-precio="$18.000 CLP" data-descripcion="Descripcion">
+        <img src="imagenes/camiseta_negra.jpg" alt="PROXIMAMENTE..">
+        <h3>PROXIMAMENTE..</h3>
+        <p>$18.000 CLP</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre Nosotros</h2>
+    <p>En <strong>Jacobo.store</strong> creemos que la ropa no solo se usa, se siente. Cada prenda está pensada para que expreses tu estilo urbano con confianza y energía ⚡</p>
+  </section>
+
+  <footer>© 2025 Jacobo.store — Todos los derechos reservados.</footer>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <div class="modal-contenido">
+      <img src="" alt="Producto" id="modal-img">
+      <h3 id="modal-nombre"></h3>
+      <p id="modal-descripcion"></p>
+      <p><strong id="modal-precio"></strong></p>
+      <a id="whatsapp-btn" href="#" target="_blank">Comprar por WhatsApp</a><br>
+      <button class="cerrar" id="cerrar">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- SCRIPT JS -->
+  <script>
+    const productos = document.querySelectorAll(".producto");
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const modalNombre = document.getElementById("modal-nombre");
+    const modalDescripcion = document.getElementById("modal-descripcion");
+    const modalPrecio = document.getElementById("modal-precio");
+    const cerrar = document.getElementById("cerrar");
+    const whatsappBtn = document.getElementById("whatsapp-btn");
+
+    const numeroWhatsApp = "56977648287"; // TU NÚMERO
+
+    productos.forEach(prod => {
+      prod.addEventListener("click", () => {
+        modal.style.display = "flex";
+        modalImg.src = prod.querySelector("img").src;
+        modalNombre.textContent = prod.dataset.nombre;
+        modalDescripcion.textContent = prod.dataset.descripcion;
+        modalPrecio.textContent = prod.dataset.precio;
+
+        const mensaje = `Hola, quiero comprar ${prod.dataset.nombre}`;
+        const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+        whatsappBtn.href = urlWhatsApp;
+      });
+    });
+
+    cerrar.addEventListener("click", () => modal.style.display = "none");
+    modal.addEventListener("click", e => {
+      if(e.target === modal) modal.style.display = "none";
+    });
+
+    const secciones = document.querySelectorAll("section");
+    function mostrarSecciones() {
+      const trigger = window.innerHeight * 0.85;
+      secciones.forEach(sec => {
+        if(sec.getBoundingClientRect().top < trigger) sec.classList.add("visible");
+      });
+    }
+    window.addEventListener("scroll", mostrarSecciones);
+    window.addEventListener("load", mostrarSecciones);
+  </script>
+</body>
+</html>
