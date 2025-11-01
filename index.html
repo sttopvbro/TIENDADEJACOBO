@@ -23,19 +23,20 @@
 
     /* ===== HEADER ===== */
     header {
-      position:fixed; top:0; left:0; width:100%;
+      position: fixed; top:0; left:0; width:100%;
       background: rgba(0,0,0,0.7);
       padding:15px 40px;
       display:flex; justify-content:space-between; align-items:center;
-      backdrop-filter: blur(8px); border-bottom: 2px solid #00bfff; z-index:1000;
+      backdrop-filter: blur(8px); border-bottom: 2px solid #00bfff;
+      z-index:1000; transition: top 0.3s;
     }
-    header h1 { display:flex; align-items:center; color:#00bfff; font-size:1.8em; font-weight:700; }
-    header h1 img { height:40px; margin-right:10px; }
+    header h1 { display:flex; align-items:center; color:#00bfff; font-size:2em; font-weight:700; }
+    header h1 img { height:60px; margin-right:10px; } /* logo más grande */
     nav a { margin-left:25px; text-decoration:none; color:#fff; font-weight:500; transition:0.3s; }
     nav a:hover { color:#00ffff; }
 
     /* ===== SECCIONES ===== */
-    section { min-height:100vh; padding:100px 60px; display:flex; flex-direction:column; justify-content:center; opacity:0; transform:translateY(50px); transition:all 0.8s ease; }
+    section { min-height:100vh; padding:100px 20px; display:flex; flex-direction:column; justify-content:center; opacity:0; transform:translateY(50px); transition:all 0.8s ease; }
     section.visible { opacity:1; transform:translateY(0); }
 
     #inicio { text-align:center; }
@@ -70,63 +71,25 @@
     #whatsapp-btn { display:inline-block; background:#25D366; color:#fff; padding:10px 18px; border-radius:6px; margin-top:10px; text-decoration:none; font-weight:bold; transition:0.3s; }
     #whatsapp-btn:hover { background:#1ebe57; }
     @keyframes aparecer { from{transform:scale(0.8); opacity:0;} to{transform:scale(1); opacity:1;} }
+
+    /* ===== BOTON FIJO WHATSAPP ===== */
+    #whatsapp-fijo {
+      position: fixed; bottom:20px; right:20px;
+      background:#25D366; color:#fff; padding:15px 20px; border-radius:50px;
+      text-decoration:none; font-size:1.2em; box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      z-index:1001; transition:0.3s;
+    }
+    #whatsapp-fijo:hover { background:#1ebe57; }
   </style>
 </head>
 <body>
   <header>
-    <header>
-  <div class="header-container">
-    <img src="imagenes/logo.665.jpg" alt="Logo" class="logo">
-    <h1>Jacobo.store</h1>
+    <h1><img src="imagenes/logo_3365.jpg" alt="">Jacobo.store</h1>
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#productos">Productos</a>
       <a href="#sobre">Sobre Nosotros</a>
     </nav>
-  </div>
-</header>
-
-<style>
-/* HEADER REARMADO */
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 40px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(0,0,0,0.7);
-  backdrop-filter: blur(8px);
-  border-bottom: 2px solid #00bfff;
-  z-index: 1000;
-}
-
-.logo {
- height: 80px; /* tamaño grande del logo */
- width: auto;
- margin-right: 15px;
-}
-
-.header-container h1 {
-  color: #00bfff;
-  font-size: 2em;
-  font-weight: 700;
-}
-
-.header-container nav a {
-  margin-left: 25px;
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-  transition: 0.3s;
-}
-
-.header-container nav a:hover {
-  color: #00ffff;
-}
-</style>
   </header>
 
   <section id="inicio">
@@ -137,24 +100,24 @@
   <section id="productos">
     <h2>Clothes</h2>
     <div class="grid-productos">
-      <div class="producto" data-nombre="NIKE TECH 🩶" data-precio="$80.000 CLP" data-descripcion="Conjunto Nike Tech Dark Grey">
+      <div class="producto" data-nombre="NIKE TECH 🩶" data-precio="$80.000 CLP" data-descripcion="Conjunto NIKE TECH DARK GREY">
         <img src="imagenes/tech_3363.png" alt="CONJUNTO">
         <h3>CONJUNTO NIKE TECH DARK GREY</h3>
         <p>$80.000 CLP</p>
       </div>
-      <div class="producto" data-nombre="Polerón Jacobo.store" data-precio="$25.000 CLP" data-descripcion="Polerón premium con bordado Jacobo.store. Ideal para cualquier temporada.">
-        <img src="imagenes/poleron.jpg" alt="Polerón">
-        <h3>Polerón Jacobo.store</h3>
+      <div class="producto" data-nombre="Proximamente.." data-precio="$25.000 CLP" data-descripcion="Polerón premium próximamente..">
+        <img src="imagenes/poleron.jpg" alt="Proximamente">
+        <h3>Proximamente..</h3>
         <p>$25.000 CLP</p>
       </div>
-      <div class="producto" data-nombre="Gorra Proximamente" data-precio="$10.000 CLP" data-descripcion="Descripcion">
-        <img src="imagenes/gorra.jpg" alt="Gorra">
-        <h3>Gorra Proximamente</h3>
+      <div class="producto" data-nombre="Proximamente.." data-precio="$10.000 CLP" data-descripcion="Gorra próximamente..">
+        <img src="imagenes/gorra.jpg" alt="Proximamente">
+        <h3>Proximamente..</h3>
         <p>$10.000 CLP</p>
       </div>
-      <div class="producto" data-nombre="Camiseta Negra" data-precio="$18.000 CLP" data-descripcion="Descripcion">
-        <img src="imagenes/camiseta_negra.jpg" alt="Camiseta Negra">
-        <h3>Camiseta Negra</h3>
+      <div class="producto" data-nombre="Proximamente.." data-precio="$18.000 CLP" data-descripcion="Camiseta próximamente..">
+        <img src="imagenes/camiseta_negra.jpg" alt="Proximamente">
+        <h3>Proximamente..</h3>
         <p>$18.000 CLP</p>
       </div>
     </div>
@@ -179,8 +142,12 @@
     </div>
   </div>
 
+  <!-- BOTON FIJO WHATSAPP -->
+  <a id="whatsapp-fijo" href="https://wa.me/56977648287" target="_blank">WhatsApp</a>
+
   <!-- SCRIPT JS -->
   <script>
+    // Modal productos
     const productos = document.querySelectorAll(".producto");
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modal-img");
@@ -189,8 +156,7 @@
     const modalPrecio = document.getElementById("modal-precio");
     const cerrar = document.getElementById("cerrar");
     const whatsappBtn = document.getElementById("whatsapp-btn");
-
-    const numeroWhatsApp = "56977648287"; // TU NÚMERO
+    const numeroWhatsApp = "56977648287";
 
     productos.forEach(prod => {
       prod.addEventListener("click", () => {
@@ -199,18 +165,14 @@
         modalNombre.textContent = prod.dataset.nombre;
         modalDescripcion.textContent = prod.dataset.descripcion;
         modalPrecio.textContent = prod.dataset.precio;
-
-        const mensaje = `Hola, quiero comprar ${prod.dataset.nombre}`;
-        const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
-        whatsappBtn.href = urlWhatsApp;
+        whatsappBtn.href = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent("Hola, quiero comprar " + prod.dataset.nombre)}`;
       });
     });
 
     cerrar.addEventListener("click", () => modal.style.display = "none");
-    modal.addEventListener("click", e => {
-      if(e.target === modal) modal.style.display = "none";
-    });
+    modal.addEventListener("click", e => { if(e.target === modal) modal.style.display = "none"; });
 
+    // Animación scroll secciones
     const secciones = document.querySelectorAll("section");
     function mostrarSecciones() {
       const trigger = window.innerHeight * 0.85;
@@ -220,6 +182,19 @@
     }
     window.addEventListener("scroll", mostrarSecciones);
     window.addEventListener("load", mostrarSecciones);
+
+    // Header que desaparece al hacer scroll
+    let lastScroll = 0;
+    const header = document.querySelector("header");
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset;
+      if(currentScroll > lastScroll && currentScroll > 50) {
+        header.style.top = "-100px";
+      } else {
+        header.style.top = "0";
+      }
+      lastScroll = currentScroll;
+    });
   </script>
 </body>
 </html>
